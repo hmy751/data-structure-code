@@ -1,8 +1,7 @@
 import { SinglyLinkedList } from "./singlyLinkedList";
 
 describe("Test Singly Linked List", () => {
-  // 리스트 처음 생성
-  it("리스트를 생성한다.", () => {
+  it("리스트 생성", () => {
     const list = new SinglyLinkedList();
 
     expect(list.head).toBe(null);
