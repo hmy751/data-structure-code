@@ -18,7 +18,16 @@ describe("Test Singly Linked List", () => {
     expect(list.size).toBe(1);
   });
 
-  // 이미 값이 있는 상태에서 값 추가
+  it("기존 리스트에 값 추가", () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+
+    expect(list.head?.value).toBe(1);
+    expect(list.tail?.value).toBe(2);
+    expect(list.size).toBe(2);
+  });
 
   // 리스트가 있는 상태에서 제거
 
