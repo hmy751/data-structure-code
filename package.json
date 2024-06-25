@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.24.7",
     "@tsconfig/recommended": "^1.0.6",
     "@types/jest": "^29.5.12",
     "babel-eslint": "^10.1.0",
