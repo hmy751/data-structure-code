@@ -8,8 +8,15 @@ describe("Test Singly Linked List", () => {
     expect(list.tail).toBe(null);
   });
 
-  // 리스트 생성 후 값 추가
-  it("", () => {});
+  it("리스트 생성 후 값 추가", () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+
+    expect(list.head?.value).toBe(1);
+    expect(list.tail?.value).toBe(1);
+    expect(list.size).toBe(1);
+  });
 
   // 이미 값이 있는 상태에서 값 추가
 
