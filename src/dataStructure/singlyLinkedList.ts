@@ -20,7 +20,7 @@ export class SinglyLinkedList {
     this.tail = null;
   }
 
-  add(value: ValueType) {
+  push(value: ValueType) {
     const newNode = new ListNode(value);
 
     if (this.head === null || this.tail === null) {
@@ -34,7 +34,7 @@ export class SinglyLinkedList {
     this._size++;
   }
 
-  remove() {
+  pop() {
     if (this.head === null || this.tail === null) {
       return null;
     }
@@ -67,18 +67,3 @@ export class SinglyLinkedList {
 }
 
 const list = new SinglyLinkedList();
-list.add(2);
-list.add(2);
-list.add(2);
-// console.log(list.getSize());
-console.log(list.remove());
-console.log(list.remove());
-console.log(list.remove());
-console.log(list.remove());
-list.add(2);
-// console.log(list.remove());
-console.log(list.size);
-console.log(list);
-// console.log(list.remove());
-// console.log(list.remove());
-// console.log(list.getSize());
