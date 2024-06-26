@@ -41,5 +41,29 @@ export class DoublyLinkedList {
     this._size++;
   }
 
-  // pop() {}
+  pop(): DoublyLinkedListNode | null {
+    if (this.head === null || this.tail === null) {
+      return null;
+    }
+
+    this._size--;
+
+    if (this.tail.prev === null) {
+      const current = this.tail;
+
+      this.head = null;
+      this.tail = null;
+
+      return current;
+    }
+
+    const newTail = this.tail.prev;
+    const current = this.tail;
+
+    this.tail = newTail;
+    this.tail.next = null;
+    this.tail.prev = newTail.prev;
+
+    return current;
+  }
 }
