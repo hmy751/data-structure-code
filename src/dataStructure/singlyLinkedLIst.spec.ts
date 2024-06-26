@@ -132,12 +132,14 @@ describe("Test Singly Linked List", () => {
   });
 
   it("무효한 인덱스에 노드 추가", () => {
-    // const list = new SinglyLinkedList();
-    // list.push(1);
-    // list.push(2);
-    // list.push(3);
-    // list.push(4);
-    // expect(list.insert(6, 44)).toBe(null);
-    // expect(list.insert(-1, 44)).toBe(null);
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    expect(list.insert(6, 44)).toBe(null);
+    expect(list.insert(-1, 44)).toBe(null);
   });
 });
