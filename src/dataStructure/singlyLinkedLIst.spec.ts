@@ -156,4 +156,15 @@ describe("Test Singly Linked List", () => {
     expect(list.remove(2)?.value).toBe(4);
     expect(list.size).toBe(1);
   });
+
+  it("무효한 인덱스에 노드 제거", () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(4);
+
+    expect(list.remove(6)).toBe(null);
+    expect(list.remove(-1)).toBe(null);
+  });
 });
