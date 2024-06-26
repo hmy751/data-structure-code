@@ -125,16 +125,23 @@ export class SinglyLinkedList {
   }
 
   remove(index: number): ListNode | null {
-    // if (this.head === null) return null;
-    // if (index === 0) return this.shift();
-    // if (index === this._size) return this.pop();
-    // const temp = this.search(index - 1);
-    // const target = temp?.next;
-    // const next = target?.next;
-    // temp.next = next;
-    // target.next = null;
-    // this._size--;
-    // return target;
+    if (this.head === null) return null;
+    if (index === 0) return this.shift();
+    if (index === this._size) return this.pop();
+
+    if (index > this._size) return null;
+    if (index < 0) return null;
+
+    const temp = this.search(index - 1)!;
+    const target = temp?.next!;
+    const next = target?.next!;
+
+    temp.next = next;
+    target.next = null;
+
+    this._size--;
+
+    return target;
   }
 
   get size() {
