@@ -21,4 +21,8 @@ export class DoublyLinkedList {
     this.head = null;
     this.tail = null;
   }
+
+  get size(): number {
+    return this._size;
+  }
 }
