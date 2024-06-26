@@ -71,4 +71,18 @@ describe("Test Singly Linked List", () => {
     expect(list.tail).toBe(null);
     expect(list.size).toBe(0);
   });
+
+  it("특정 인덱스의 노드를 찾을 때", () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    const targetNode = list.search(2);
+
+    expect(targetNode?.value).toBe(3);
+    expect(targetNode?.next?.value).toBe(4);
+  });
 });
