@@ -50,23 +50,31 @@ it("기존 리스트에서 노드 제거", () => {
 });
 
 it("Head가 1개일 때 노드 제거", () => {
-  // const list = new DoublyLinkedList();
-  // list.push(1);
-  // list.pop();
-  // expect(list.head).toBe(null);
-  // expect(list.tail).toBe(null);
-  // expect(list.size).toBe(0);
+  const list = new DoublyLinkedList();
+
+  list.push(1);
+  const popNode = list.pop();
+
+  expect(popNode?.value).toBe(1);
+  expect(list.head).toBe(null);
+  expect(list.tail).toBe(null);
+  expect(list.size).toBe(0);
 });
 
 it("리스트의 노드가 없을 때 노드 제거", () => {
-  // const list = new DoublyLinkedList();
-  // list.push(1);
-  // list.pop();
-  // expect(list.head).toBe(null);
-  // expect(list.tail).toBe(null);
-  // expect(list.size).toBe(0);
-  // expect(list.pop()).toBe(null);
-  // expect(list.head).toBe(null);
-  // expect(list.tail).toBe(null);
-  // expect(list.size).toBe(0);
+  const list = new DoublyLinkedList();
+
+  list.push(1);
+  list.pop();
+
+  expect(list.head).toBe(null);
+  expect(list.tail).toBe(null);
+  expect(list.size).toBe(0);
+
+  const popNode = list.pop();
+
+  expect(popNode).toBe(null);
+  expect(list.head).toBe(null);
+  expect(list.tail).toBe(null);
+  expect(list.size).toBe(0);
 });
