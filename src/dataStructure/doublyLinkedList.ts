@@ -66,4 +66,22 @@ export class DoublyLinkedList {
 
     return current;
   }
+
+  search(index: number): DoublyLinkedListNode | null {
+    if (this.head === null) return null;
+    if (index > this._size) return null;
+    if (index < 0) return null;
+
+    let count = index;
+    let current = this.head;
+
+    while (current.next && count > 0) {
+      count--;
+      current = current.next;
+    }
+
+    return current;
+  }
+
+  insert(index: number, value: ValueType): DoublyLinkedListNode | null {}
 }
