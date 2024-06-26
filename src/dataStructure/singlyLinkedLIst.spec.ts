@@ -29,7 +29,20 @@ describe("Test Singly Linked List", () => {
     expect(list.size).toBe(2);
   });
 
-  // 리스트가 있는 상태에서 제거
+  it("기존 리스트에서 노드 제거", () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    list.pop();
+    list.pop();
+
+    expect(list?.tail?.value).toBe(2);
+    expect(list.size).toBe(2);
+  });
 
   // head가 한 개 일때 제거
 
