@@ -155,6 +155,9 @@ describe("Test Singly Linked List", () => {
 
     expect(list.remove(2)?.value).toBe(4);
     expect(list.size).toBe(1);
+
+    expect(list.remove(0)?.value).toBe(1);
+    expect(list.size).toBe(0);
   });
 
   it("무효한 인덱스에 노드 제거", () => {
