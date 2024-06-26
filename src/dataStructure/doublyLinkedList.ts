@@ -2,8 +2,8 @@ type ValueType = string | number | Record<string, unknown> | Array<unknown>;
 
 export class DoublyLinkedListNode {
   readonly value: ValueType;
-  readonly prev: DoublyLinkedListNode | null;
-  readonly next: DoublyLinkedListNode | null;
+  prev: DoublyLinkedListNode | null;
+  next: DoublyLinkedListNode | null;
 
   constructor(value: ValueType) {
     this.value = value;
@@ -13,9 +13,9 @@ export class DoublyLinkedListNode {
 }
 
 export class DoublyLinkedList {
-  readonly head: DoublyLinkedListNode | null;
-  readonly tail: DoublyLinkedListNode | null;
-  readonly _size: number = 0;
+  head: DoublyLinkedListNode | null;
+  tail: DoublyLinkedListNode | null;
+  _size: number = 0;
 
   constructor() {
     this.head = null;
@@ -24,5 +24,11 @@ export class DoublyLinkedList {
 
   get size(): number {
     return this._size;
+  }
+
+  push(value: ValueType) {
+    const newNode = new DoublyLinkedListNode(value);
+
+    this.head = newNode;
   }
 }
