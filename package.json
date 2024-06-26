@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ts-node ./src/index.html",
     "build": "ts-node build ./src/index.html",
-    "test": "jest"
+    "test": "jest --watchAll --coverage"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.7",
