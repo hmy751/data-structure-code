@@ -97,4 +97,23 @@ describe("Test Singly Linked List", () => {
     expect(list.search(6)).toBe(null);
     expect(list.search(-1)).toBe(null);
   });
+
+  it("특정 인덱스에 노드 추가", () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    list.insert(2, 33);
+
+    const target = list.search(2);
+
+    expect(target?.value).toBe(33);
+    expect(target?.next?.value).toBe(3);
+    expect(list.size).toBe(5);
+  });
+
+  it("무효한 인덱스에 노드 추가", () => {});
 });
