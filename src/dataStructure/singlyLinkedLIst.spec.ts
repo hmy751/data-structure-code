@@ -113,7 +113,31 @@ describe("Test Singly Linked List", () => {
     expect(target?.value).toBe(33);
     expect(target?.next?.value).toBe(3);
     expect(list.size).toBe(5);
+
+    list.insert(0, 11);
+
+    const target2 = list.search(0);
+
+    expect(target2?.value).toBe(11);
+    expect(target2?.next?.value).toBe(1);
+    expect(list.size).toBe(6);
+
+    list.insert(6, 66);
+
+    const target3 = list.search(6);
+
+    expect(target3?.value).toBe(66);
+    expect(target3?.next).toBe(null);
+    expect(list.size).toBe(7);
   });
 
-  it("무효한 인덱스에 노드 추가", () => {});
+  it("무효한 인덱스에 노드 추가", () => {
+    // const list = new SinglyLinkedList();
+    // list.push(1);
+    // list.push(2);
+    // list.push(3);
+    // list.push(4);
+    // expect(list.insert(6, 44)).toBe(null);
+    // expect(list.insert(-1, 44)).toBe(null);
+  });
 });
