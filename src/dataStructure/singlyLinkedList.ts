@@ -119,10 +119,23 @@ export class SinglyLinkedList {
     this.head = this.head.next;
     temp.next = null;
 
+    this._size--;
+
     return temp;
   }
 
-  remove() {}
+  remove(index: number): ListNode | null {
+    // if (this.head === null) return null;
+    // if (index === 0) return this.shift();
+    // if (index === this._size) return this.pop();
+    // const temp = this.search(index - 1);
+    // const target = temp?.next;
+    // const next = target?.next;
+    // temp.next = next;
+    // target.next = null;
+    // this._size--;
+    // return target;
+  }
 
   get size() {
     return this._size;
