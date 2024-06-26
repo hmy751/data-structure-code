@@ -44,7 +44,16 @@ describe("Test Singly Linked List", () => {
     expect(list.size).toBe(2);
   });
 
-  // head가 한 개 일때 제거
+  it("Head가 1개일 때 노드 제거", () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.pop();
+
+    expect(list.head).toBe(null);
+    expect(list.tail).toBe(null);
+    expect(list.size).toBe(0);
+  });
 
   // 리스트에 암 것도 없을 때 제거
 });
