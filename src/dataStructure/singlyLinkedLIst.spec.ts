@@ -26,6 +26,7 @@ describe("Test Singly Linked List", () => {
 
     expect(list.head?.value).toBe(1);
     expect(list.tail?.value).toBe(2);
+    expect(list?.head?.next?.value).toBe(2);
     expect(list.size).toBe(2);
   });
 
