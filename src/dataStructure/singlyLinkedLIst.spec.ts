@@ -72,7 +72,7 @@ describe("Test Singly Linked List", () => {
     expect(list.size).toBe(0);
   });
 
-  it("특정 인덱스의 노드를 찾을 때", () => {
+  it("특정 인덱스의 노드를 조회할 때", () => {
     const list = new SinglyLinkedList();
 
     list.push(1);
@@ -84,5 +84,17 @@ describe("Test Singly Linked List", () => {
 
     expect(targetNode?.value).toBe(3);
     expect(targetNode?.next?.value).toBe(4);
+  });
+
+  it("무효한 인덱스의 노드를 조회할 때", () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    expect(list.search(6)).toBe(null);
+    expect(list.search(-1)).toBe(null);
   });
 });
