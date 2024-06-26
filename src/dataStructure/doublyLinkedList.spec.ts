@@ -31,16 +31,22 @@ it("기존 리스트에 노드 추가", () => {
 });
 
 it("기존 리스트에서 노드 제거", () => {
-  // const list = new DoublyLinkedList();
-  // list.push(1);
-  // list.push(2);
-  // list.push(3);
-  // list.push(4);
-  // list.pop();
-  // list.pop();
-  // expect(list?.tail?.value).toBe(2);
-  // expect(list?.tail?.prev?.value).toBe(1);
-  // expect(list.size).toBe(2);
+  const list = new DoublyLinkedList();
+
+  list.push(1);
+  list.push(2);
+  list.push(3);
+  list.push(4);
+
+  const firstPopNode = list.pop();
+  expect(firstPopNode?.value).toBe(4);
+
+  const secondPopNode = list.pop();
+  expect(secondPopNode?.value).toBe(3);
+
+  expect(list?.tail?.value).toBe(2);
+  expect(list?.tail?.prev?.value).toBe(1);
+  expect(list.size).toBe(2);
 });
 
 it("Head가 1개일 때 노드 제거", () => {
