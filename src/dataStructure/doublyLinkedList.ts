@@ -29,6 +29,17 @@ export class DoublyLinkedList {
   push(value: ValueType) {
     const newNode = new DoublyLinkedListNode(value);
 
-    this.head = newNode;
+    if (this.head === null || this.tail === null) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.prev = this.tail;
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+
+    this._size++;
   }
+
+  // pop() {}
 }
