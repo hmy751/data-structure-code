@@ -79,4 +79,21 @@ describe("Test Doubly Linked List", () => {
     expect(list.tail).toBe(null);
     expect(list.size).toBe(0);
   });
+
+  it("특정 인덱스에 노드를 추가", () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    const insertNode = list.insert(2, 33);
+
+    expect(insertNode.value).toBe(33);
+    expect(insertNode.next.value).toBe(3);
+    expect(insertNode.prev.value).toBe(2);
+  });
+
+  it("무효한 인덱스에 노드를 추가", () => {});
 });
