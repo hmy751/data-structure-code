@@ -34,7 +34,7 @@ export class SinglyLinkedList {
     this._size++;
   }
 
-  pop() {
+  pop(): ListNode | null {
     if (this.head === null || this.tail === null) {
       return null;
     }
@@ -65,5 +65,3 @@ export class SinglyLinkedList {
     return this._size;
   }
 }
-
-const list = new SinglyLinkedList();
