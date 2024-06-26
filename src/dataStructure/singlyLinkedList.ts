@@ -32,6 +32,8 @@ export class SinglyLinkedList {
     }
 
     this._size++;
+
+    return newNode;
   }
 
   pop(): ListNode | null {
@@ -91,20 +93,15 @@ export class SinglyLinkedList {
   }
 
   insert(index: number, value: ValueType): ListNode | null {
-    if (this.head === null) return null;
-    if (index === 0) return this.unshift(value);
-
-    const temp = this.search(index - 1);
-    const newNode = new ListNode(value);
-
-    console.log(temp);
-
-    newNode.next = temp?.next;
-    temp.next = newNode;
-
-    this._size++;
-
-    return newNode;
+    // if (this.head === null) return null;
+    // if (index === 0) return this.unshift(value);
+    // if (index === this._size) return this.push(value);
+    // const temp = this.search(index - 1);
+    // const newNode = new ListNode(value);
+    // newNode.next = temp?.next;
+    // temp.next = newNode;
+    // this._size++;
+    // return newNode;
   }
 
   remove() {}
