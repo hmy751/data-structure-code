@@ -77,6 +77,38 @@ export class SinglyLinkedList {
     return current;
   }
 
+  unshift(value: ValueType): ListNode | null {
+    if (this.head === null) return null;
+
+    const newNode = new ListNode(value);
+
+    newNode.next = this.head;
+    this.head = newNode;
+
+    this._size++;
+
+    return this.head;
+  }
+
+  insert(index: number, value: ValueType): ListNode | null {
+    if (this.head === null) return null;
+    if (index === 0) return this.unshift(value);
+
+    const temp = this.search(index - 1);
+    const newNode = new ListNode(value);
+
+    console.log(temp);
+
+    newNode.next = temp?.next;
+    temp.next = newNode;
+
+    this._size++;
+
+    return newNode;
+  }
+
+  remove() {}
+
   get size() {
     return this._size;
   }
