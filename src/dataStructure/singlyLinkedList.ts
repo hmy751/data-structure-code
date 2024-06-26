@@ -111,6 +111,17 @@ export class SinglyLinkedList {
     return newNode;
   }
 
+  shift(): ListNode | null {
+    if (this.head === null) return null;
+
+    const temp = this.head;
+
+    this.head = this.head.next;
+    temp.next = null;
+
+    return temp;
+  }
+
   remove() {}
 
   get size() {
