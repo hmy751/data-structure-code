@@ -8,23 +8,26 @@ it("리스트 생성", () => {
 });
 
 it("리스트 생성 후 노드 추가", () => {
-  // const list = new DoublyLinkedList();
-  // list.push(1);
-  // expect(list.head?.value).toBe(1);
-  // expect(list.tail?.value).toBe(1);
-  // expect(list.size).toBe(1);
+  const list = new DoublyLinkedList();
+
+  list.push(1);
+
+  expect(list.head?.value).toBe(1);
+  expect(list.tail?.value).toBe(1);
+  expect(list.size).toBe(1);
 });
 
 it("기존 리스트에 노드 추가", () => {
-  // const list = new DoublyLinkedList();
-  // list.push(1);
-  // list.push(2);
-  // // prev, next 점검
-  // expect(list.head?.value).toBe(1);
-  // expect(list.tail?.value).toBe(2);
-  // expect(list.head?.next?.value).toBe(2);
-  // expect(list.tail?.prev?.value).toBe(1);
-  // expect(list.size).toBe(2);
+  const list = new DoublyLinkedList();
+
+  list.push(1);
+  list.push(2);
+
+  expect(list.head?.value).toBe(1);
+  expect(list.tail?.value).toBe(2);
+  expect(list.head?.next).toBe(list.tail);
+  expect(list.tail?.prev).toBe(list.head);
+  expect(list.size).toBe(2);
 });
 
 it("기존 리스트에서 노드 제거", () => {
