@@ -8,7 +8,7 @@ describe("Test Singly Linked List", () => {
     expect(list.tail).toBe(null);
   });
 
-  it("리스트 생성 후 값 추가", () => {
+  it("리스트 생성 후 노드 추가", () => {
     const list = new SinglyLinkedList();
 
     list.push(1);
@@ -18,7 +18,7 @@ describe("Test Singly Linked List", () => {
     expect(list.size).toBe(1);
   });
 
-  it("기존 리스트에 값 추가", () => {
+  it("기존 리스트에 노드 추가", () => {
     const list = new SinglyLinkedList();
 
     list.push(1);
