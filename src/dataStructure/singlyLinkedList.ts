@@ -61,6 +61,22 @@ export class SinglyLinkedList {
     return current;
   }
 
+  search(index: number): ListNode | null {
+    if (this.head === null) return null;
+    if (index > this._size) return null;
+    if (index < 0) return null;
+
+    let count = index;
+    let current: ListNode | null = this.head;
+
+    while (current.next && count > 0) {
+      count--;
+      current = current.next;
+    }
+
+    return current;
+  }
+
   get size() {
     return this._size;
   }
