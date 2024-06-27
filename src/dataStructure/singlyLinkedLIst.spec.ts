@@ -153,7 +153,7 @@ describe("Test Singly Linked List", () => {
     expect(list.remove(1)?.value).toBe(2);
     expect(list.size).toBe(2);
 
-    expect(list.remove(2)?.value).toBe(4);
+    expect(list.remove(1)?.value).toBe(4);
     expect(list.size).toBe(1);
 
     expect(list.remove(0)?.value).toBe(1);
