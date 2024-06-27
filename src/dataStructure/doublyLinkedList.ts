@@ -26,7 +26,7 @@ export class DoublyLinkedList {
     return this._size;
   }
 
-  push(value: ValueType) {
+  push(value: ValueType): DoublyLinkedListNode {
     const newNode = new DoublyLinkedListNode(value);
 
     if (this.head === null || this.tail === null) {
@@ -39,6 +39,8 @@ export class DoublyLinkedList {
     }
 
     this._size++;
+
+    return newNode;
   }
 
   pop(): DoublyLinkedListNode | null {
@@ -83,5 +85,39 @@ export class DoublyLinkedList {
     return current;
   }
 
-  insert(index: number, value: ValueType): DoublyLinkedListNode | null {}
+  unshift(value: ValueType) {
+    if (this.head === null) return null;
+
+    const newNode = new DoublyLinkedListNode(value);
+    const current = this.head;
+
+    newNode.next = current;
+    current.prev = newNode;
+
+    this.head = newNode;
+
+    this._size++;
+
+    return newNode;
+  }
+
+  insert(index: number, value: ValueType): DoublyLinkedListNode | null {
+    if (this.head === null) return null;
+    if (index === 0) return this.unshift(value);
+    if (index === this._size) return this.push(value);
+
+    const newNode = new DoublyLinkedListNode(value)!;
+    const current = this.search(index)!;
+    const prev = current?.prev!;
+
+    prev.next = newNode;
+    newNode.prev = prev;
+
+    newNode.next = current;
+    current.prev = newNode;
+
+    this._size++;
+
+    return newNode;
+  }
 }
