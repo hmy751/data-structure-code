@@ -127,9 +127,9 @@ export class SinglyLinkedList {
   remove(index: number): ListNode | null {
     if (this.head === null) return null;
     if (index === 0) return this.shift();
-    if (index === this._size) return this.pop();
+    if (index === this._size - 1) return this.pop();
 
-    if (index > this._size) return null;
+    if (index >= this._size) return null;
     if (index < 0) return null;
 
     const temp = this.search(index - 1)!;
