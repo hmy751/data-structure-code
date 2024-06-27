@@ -123,4 +123,49 @@ export class DoublyLinkedList {
 
     return newNode;
   }
+
+  shift(): DoublyLinkedListNode | null {
+    if (this.head === null) return null;
+
+    const current = this.head;
+    const next = current.next;
+
+    if (next === null) {
+      this.head = null;
+      this.tail = null;
+      this._size = 0;
+      return current;
+    }
+
+    next.prev = null;
+    this.head = next;
+    this.head.prev = null;
+
+    this._size--;
+
+    return current;
+  }
+
+  remove(index: number) {
+    if (this.head === null) return null;
+    if (index === 0) return this.shift();
+    if (index === this._size - 1) return this.pop();
+
+    if (index >= this._size) return null;
+    if (index < 0) return null;
+
+    const temp = this.search(index)!;
+    const prev = temp.prev!;
+    const next = temp?.next!;
+
+    prev.next = next;
+    next.prev = prev;
+
+    temp.next = null;
+    temp.prev = null;
+
+    this._size--;
+
+    return temp;
+  }
 }
