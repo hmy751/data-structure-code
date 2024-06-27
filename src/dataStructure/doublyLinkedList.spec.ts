@@ -122,32 +122,31 @@ describe("Test Doubly Linked List", () => {
     expect(list.insert(-1, -11)).toBe(null);
   });
 
-  it("특정 인덱스의 노드 제거"),
-    () => {
-      const list = new DoublyLinkedList();
+  it("특정 인덱스의 노드 제거", () => {
+    const list = new DoublyLinkedList();
 
-      list.push(1);
-      list.push(2);
-      list.push(3);
-      list.push(4);
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
 
-      const removedNode = list.remove(1);
+    const removedNode = list.remove(1);
 
-      expect(removedNode?.value).toBe(2);
-      expect(removedNode?.prev).toBe(null);
-      expect(removedNode?.next).toBe(null);
-      expect(list.size).toBe(3);
+    expect(removedNode?.value).toBe(2);
+    expect(removedNode?.prev).toBe(null);
+    expect(removedNode?.next).toBe(null);
+    expect(list.size).toBe(3);
 
-      const removedNode1 = list.remove(2);
+    const removedNode1 = list.remove(2);
 
-      expect(removedNode1?.value).toBe(4);
-      expect(list.size).toBe(2);
+    expect(removedNode1?.value).toBe(4);
+    expect(list.size).toBe(2);
 
-      const removedNode2 = list.remove(2);
+    const removedNode2 = list.remove(0);
 
-      expect(removedNode2?.value).toBe(1);
-      expect(list.size).toBe(1);
-    };
+    expect(removedNode2?.value).toBe(1);
+    expect(list.size).toBe(1);
+  });
 
   it("무효한 인덱스의 노드 제거", () => {});
 });
