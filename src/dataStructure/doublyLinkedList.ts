@@ -106,6 +106,9 @@ export class DoublyLinkedList {
     if (index === 0) return this.unshift(value);
     if (index === this._size) return this.push(value);
 
+    if (index > this._size) return null;
+    if (index < 0) return null;
+
     const newNode = new DoublyLinkedListNode(value)!;
     const current = this.search(index)!;
     const prev = current?.prev!;
