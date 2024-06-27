@@ -90,9 +90,24 @@ describe("Test Doubly Linked List", () => {
 
     const insertNode = list.insert(2, 33);
 
-    expect(insertNode.value).toBe(33);
-    expect(insertNode.next.value).toBe(3);
-    expect(insertNode.prev.value).toBe(2);
+    expect(insertNode?.value).toBe(33);
+    expect(insertNode?.next?.value).toBe(3);
+    expect(insertNode?.prev?.value).toBe(2);
+    expect(list.size).toBe(5);
+
+    const insertNode1 = list.insert(0, 0);
+
+    expect(insertNode1?.value).toBe(0);
+    expect(insertNode1?.next?.value).toBe(1);
+    expect(insertNode1?.prev).toBe(null);
+    expect(list.size).toBe(6);
+
+    const insertNode2 = list.insert(6, 66);
+
+    expect(insertNode2?.value).toBe(66);
+    expect(insertNode2?.next).toBe(null);
+    expect(insertNode2?.prev?.value).toBe(4);
+    expect(list.size).toBe(7);
   });
 
   it("무효한 인덱스에 노드를 추가", () => {});
