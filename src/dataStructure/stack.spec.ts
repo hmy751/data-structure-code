@@ -8,10 +8,12 @@ describe("Test Stack", () => {
     stack.push(2);
     stack.push(3);
 
-    const firstNode = stack.pop();
-    expect(firstNode.value).toBe(3);
+    const first = stack.pop();
+    expect(first).toBe(3);
+    expect(stack.size).toBe(2);
 
-    const secondNode = stack.pop();
-    expect(secondNode.value).toBe(2);
+    const second = stack.pop();
+    expect(second).toBe(2);
+    expect(stack.size).toBe(1);
   });
 });
