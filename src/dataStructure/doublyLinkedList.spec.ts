@@ -110,5 +110,15 @@ describe("Test Doubly Linked List", () => {
     expect(list.size).toBe(7);
   });
 
-  it("무효한 인덱스에 노드를 추가", () => {});
+  it("무효한 인덱스에 노드를 추가", () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    expect(list.insert(6, 66)).toBe(null);
+    expect(list.insert(-1, -11)).toBe(null);
+  });
 });
