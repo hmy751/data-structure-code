@@ -1,7 +1,7 @@
 import { Node, BinaryTree } from "./binaryTree";
 
 describe("Test Binary test", () => {
-  it("전위순회(preorder) 테스트", () => {
+  it("preorder(전위순회) 테스트", () => {
     const tree = new BinaryTree();
 
     tree.root = new Node("A");
@@ -14,8 +14,18 @@ describe("Test Binary test", () => {
 
     tree.root.left.right.left = new Node("F");
 
+    //      A
+    //     / \
+    //    B   C
+    //   / \
+    //  D   E
+    //     /
+    //    F
+
     const result = tree.preorderTraverse();
 
-    expect(result).toBe(["A", "B", "D", "E", "F", "C"]);
+    expect(JSON.stringify(result)).toBe(
+      JSON.stringify(["A", "B", "D", "E", "F", "C"])
+    );
   });
 });
