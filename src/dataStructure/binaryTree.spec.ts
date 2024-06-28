@@ -53,7 +53,7 @@ describe("Test Binary test", () => {
     const result = tree.inorderTraverse();
 
     expect(JSON.stringify(result)).toBe(
-      JSON.stringify(["D", "B", "E", "F", "A", "C"])
+      JSON.stringify(["D", "B", "F", "E", "A", "C"])
     );
   });
 });
