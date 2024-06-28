@@ -19,6 +19,9 @@ export class BinaryTree {
     this.root = null;
   }
 
+  // 진입(호출) => 값 조회 및 수집 => left? => left 진입
+  //                            left! => right? => right 진입
+  //                                     right! => 반환 및 종료
   preorderTraverse(
     current: Node | null = this.root,
     result: Array<ValueType> = []
@@ -38,6 +41,9 @@ export class BinaryTree {
     return result;
   }
 
+  // 진입(호출) => left? => left 진입
+  //             left! => 값 조회 및 수집 => right? => right 진입
+  //                                      right! => 반환 및 종료
   inorderTraverse(
     current: Node | null = this.root,
     result: Array<ValueType> = []
@@ -57,6 +63,9 @@ export class BinaryTree {
     return result;
   }
 
+  // 진입(호출) => left? => left 진입
+  //             left! => right? => right 진입
+  //                      right! => 값 조회 및 수집 => 반환 및 종료
   postorderTraverse(
     current: Node | null = this.root,
     result: Array<ValueType> = []
