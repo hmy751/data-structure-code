@@ -57,5 +57,22 @@ export class BinaryTree {
     return result;
   }
 
-  postorderTraverse() {}
+  postorderTraverse(
+    current: Node | null = this.root,
+    result: Array<ValueType> = []
+  ): Array<ValueType> {
+    if (current?.left) {
+      this.postorderTraverse(current.left, result);
+    }
+
+    if (current?.right) {
+      this.postorderTraverse(current.right, result);
+    }
+
+    if (current) {
+      result.push(current.value);
+    }
+
+    return result;
+  }
 }
