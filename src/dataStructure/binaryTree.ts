@@ -38,7 +38,24 @@ export class BinaryTree {
     return result;
   }
 
-  inorderTraverse() {}
+  inorderTraverse(
+    current: Node | null = this.root,
+    result: Array<ValueType> = []
+  ): Array<ValueType> {
+    if (current?.left) {
+      this.inorderTraverse(current.left, result);
+    }
+
+    if (current) {
+      result.push(current.value);
+    }
+
+    if (current?.right) {
+      this.inorderTraverse(current.right, result);
+    }
+
+    return result;
+  }
 
   postorderTraverse() {}
 }
