@@ -13,16 +13,18 @@ describe("Test Binary Search Tree", () => {
     tree.add(8);
     tree.add(15);
 
-    //     7
-    //    / \
-    //   3   11
-    //  / \   \
-    // 2   6   15
-    //    / \
-    //   5   8
+    //      7
+    //    /   \
+    //   3     11
+    //  / \   /  \
+    // 2   6  8  15
+    //    /
+    //   5
 
     const result = tree.printPreorder();
 
-    expect(result).toBe([7, 3, 2, 6, 5, 8, 11, 15]);
+    expect(JSON.stringify(result)).toBe(
+      JSON.stringify([7, 3, 2, 6, 5, 11, 8, 15])
+    );
   });
 });
