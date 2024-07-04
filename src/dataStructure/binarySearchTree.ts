@@ -59,7 +59,59 @@ export class BinarySearchTree {
   //   return;
   // }
 
-  remove() {}
+  // bfs
+  search(value: ValueType): Node | null {
+    const queue = [this.root];
+    let result = null;
+
+    while (queue?.length) {
+      const current = queue.shift();
+
+      if (!current) continue;
+
+      if (current?.value === value) {
+        result = current;
+        break;
+      }
+
+      queue.push(...[current?.left, current?.right]);
+    }
+
+    return result;
+  }
+
+  // // dfs, 이전 노ㄷ 찾기
+  // // return 반환 문 오류
+  // dfs(
+  //   value: ValueType,
+  //   result: Array<Node> = [],
+  //   current: Node | null = this.root
+  // ): Node | null {
+  //   result.push(current);
+
+  //   if (current.value === value) {
+  //     return result;
+  //   }
+
+  //   if (current.left) {
+  //     return this.dfs(value, result, current.left);
+  //   }
+
+  //   if (current.right) {
+  //     return this.dfs(value, result, current.right);
+  //   }
+
+  //   return result;
+  // }
+
+  // remove(value: ValueType): Node | null {
+  //   const target = this.search(value);
+  //   const result = this.dfs(value);
+  //   console.log(result);
+
+  //   if (!target?.left && !target?.right) {
+  //   }
+  // }
 
   printPreorder(
     current: Node | null = this.root,
