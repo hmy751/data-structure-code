@@ -60,58 +60,36 @@ export class BinarySearchTree {
   // }
 
   // bfs
-  search(value: ValueType): Node | null {
-    const queue = [this.root];
+  search(value: ValueType): (Node | null)[] | null {
+    const queue: Array<(Node | null)[]> = [[this.root, null]];
     let result = null;
 
     while (queue?.length) {
-      const current = queue.shift();
+      const [current, parent] = queue.shift()!;
 
       if (!current) continue;
 
       if (current?.value === value) {
-        result = current;
+        result = [current, parent];
         break;
       }
 
-      queue.push(...[current?.left, current?.right]);
+      queue.push(
+        ...[
+          [current?.left, current],
+          [current?.right, current],
+        ]
+      );
     }
 
     return result;
   }
 
-  // // dfs, 이전 노ㄷ 찾기
-  // // return 반환 문 오류
-  // dfs(
-  //   value: ValueType,
-  //   result: Array<Node> = [],
-  //   current: Node | null = this.root
-  // ): Node | null {
-  //   result.push(current);
-
-  //   if (current.value === value) {
-  //     return result;
-  //   }
-
-  //   if (current.left) {
-  //     return this.dfs(value, result, current.left);
-  //   }
-
-  //   if (current.right) {
-  //     return this.dfs(value, result, current.right);
-  //   }
-
-  //   return result;
-  // }
-
-  // remove(value: ValueType): Node | null {
-  //   const target = this.search(value);
-  //   const result = this.dfs(value);
-  //   console.log(result);
-
-  //   if (!target?.left && !target?.right) {
-  //   }
-  // }
+  remove(value: ValueType): Node | null {
+    // const target = this.search(value);
+    // console.log(target);
+    // target[1].left = null;
+  }
 
   printPreorder(
     current: Node | null = this.root,
