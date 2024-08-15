@@ -14,7 +14,7 @@ describe("Test Heap", () => {
     maxHeap.add(77);
 
     expect(JSON.stringify(maxHeap.list)).toBe(
-      JSON.stringify([77, 49, 10, 33, 24, 6, 1, 4])
+      JSON.stringify(["none", 77, 49, 10, 33, 24, 6, 1, 4])
     );
   });
 
