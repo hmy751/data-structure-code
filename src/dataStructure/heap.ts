@@ -14,7 +14,14 @@ export class MaxHeap {
     this.heapifyUp(this.list.length - 1);
   }
 
-  remove() {}
+  remove() {
+    if (this.list.length <= 1) return null;
+
+    this.swap(1, this.list.length - 1);
+    const result = this.list.pop();
+    this.heapifyDown(1);
+    return result;
+  }
 
   heapifyUp(index: number) {
     const parentIndex = Math.floor(index / 2);
@@ -24,6 +31,40 @@ export class MaxHeap {
       this.swap(index, parentIndex);
     }
     this.heapifyUp(parentIndex);
+  }
+
+  heapifyDown(index: number) {
+    const leftChildIndex = 2 * index;
+    const rightChildIndex = 2 * index + 1;
+
+    if (!this.list?.[leftChildIndex] && !this.list?.[rightChildIndex]) return;
+
+    if (!this.list?.[leftChildIndex]) {
+      if (this.list[index] < this.list[rightChildIndex]) {
+        this.swap(index, rightChildIndex);
+      }
+      this.heapifyDown(rightChildIndex);
+      return;
+    }
+
+    if (!this.list?.[rightChildIndex]) {
+      if (this.list[index] < this.list[leftChildIndex]) {
+        this.swap(index, leftChildIndex);
+      }
+      this.heapifyDown(leftChildIndex);
+      return;
+    }
+
+    const targetIndex =
+      this.list[leftChildIndex] > this.list[rightChildIndex]
+        ? leftChildIndex
+        : rightChildIndex;
+
+    if (this.list[index] < this.list[targetIndex]) {
+      this.swap(index, targetIndex);
+      this.heapifyDown(targetIndex);
+      return;
+    }
   }
 
   swap(preIndex: number, currentIndex: number) {
