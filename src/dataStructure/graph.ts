@@ -64,4 +64,34 @@ export class Graph {
 
     return result;
   }
+
+  bfs(target: ValueType): ValueType[] | null {
+    const targetNode = this.map.get(target);
+    if (!targetNode) return null;
+
+    const result: ValueType[] = [];
+    const visited: Set<ValueType> = new Set();
+    const queue = [targetNode];
+
+    while (queue.length > 0) {
+      const current = queue.shift();
+      if (!current) break;
+
+      if (!visited.has(current.value)) {
+        result.push(current?.value);
+        visited.add(current.value);
+      }
+
+      const neighbors = current.neighbors;
+
+      for (let i = 0; i < neighbors.length; i++) {
+        const neighbor = neighbors[i];
+        if (!visited.has(neighbor.value)) {
+          queue.push(neighbor);
+        }
+      }
+    }
+
+    return result;
+  }
 }
