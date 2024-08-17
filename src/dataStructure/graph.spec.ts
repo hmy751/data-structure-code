@@ -16,7 +16,7 @@ describe("Test Graph", () => {
     graph.addEdge(3, 5);
     graph.addEdge(4, 5);
 
-    expect(graph.dfs(1)).toBe([1, 2, 4, 5, 3]);
+    expect(JSON.stringify(graph.dfs(1))).toBe(JSON.stringify([1, 2, 4, 5, 3]));
   });
 
   it("엣지를 추가하면 그래프의 노드로 추가된다.", () => {});
