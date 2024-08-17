@@ -41,7 +41,7 @@ export class Graph {
     }
   }
 
-  dfs(target: ValueType) {
+  dfs(target: ValueType): ValueType[] {
     const result: ValueType[] = [];
     const visited = new Set();
 
