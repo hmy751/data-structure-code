@@ -23,9 +23,7 @@ describe("Test Binary Search Tree", () => {
 
     const result = tree.printPreorder();
 
-    expect(JSON.stringify(result)).toBe(
-      JSON.stringify([7, 3, 2, 6, 5, 11, 8, 15])
-    );
+    expect(result).toStrictEqual([7, 3, 2, 6, 5, 11, 8, 15]);
   });
 
   it("하위 노드가 없는 노드를 삭제할 때", () => {
@@ -60,8 +58,6 @@ describe("Test Binary Search Tree", () => {
 
     const result = tree.printPreorder();
 
-    expect(JSON.stringify(result)).toBe(
-      JSON.stringify([7, 3, 2, 6, 5, 11, 15])
-    );
+    expect(result).toStrictEqual([7, 3, 2, 6, 5, 11, 15]);
   });
 });

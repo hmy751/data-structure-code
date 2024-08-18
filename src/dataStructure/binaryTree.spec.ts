@@ -24,9 +24,7 @@ describe("Test Binary test", () => {
 
     const result = tree.preorderTraverse();
 
-    expect(JSON.stringify(result)).toBe(
-      JSON.stringify(["A", "B", "D", "E", "F", "C"])
-    );
+    expect(result).toStrictEqual(["A", "B", "D", "E", "F", "C"]);
   });
 
   it("inorder(중위순회) 테스트", () => {
@@ -52,9 +50,7 @@ describe("Test Binary test", () => {
 
     const result = tree.inorderTraverse();
 
-    expect(JSON.stringify(result)).toBe(
-      JSON.stringify(["D", "B", "F", "E", "A", "C"])
-    );
+    expect(result).toStrictEqual(["D", "B", "F", "E", "A", "C"]);
   });
 
   it("postorder(후위순회) 테스트", () => {
@@ -80,8 +76,6 @@ describe("Test Binary test", () => {
 
     const result = tree.postorderTraverse();
 
-    expect(JSON.stringify(result)).toBe(
-      JSON.stringify(["D", "F", "E", "B", "C", "A"])
-    );
+    expect(result).toStrictEqual(["D", "F", "E", "B", "C", "A"]);
   });
 });

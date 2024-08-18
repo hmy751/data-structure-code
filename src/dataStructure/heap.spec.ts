@@ -13,9 +13,7 @@ describe("Test Heap", () => {
     maxHeap.add(1);
     maxHeap.add(77);
 
-    expect(JSON.stringify(maxHeap.list)).toBe(
-      JSON.stringify(["none", 77, 49, 10, 33, 24, 6, 1, 4])
-    );
+    expect(maxHeap.list).toStrictEqual(["none", 77, 49, 10, 33, 24, 6, 1, 4]);
   });
 
   it("요소를 삭제하면, 힙 구조에 따라 요소들이 정렬된다.", () => {
@@ -33,8 +31,6 @@ describe("Test Heap", () => {
     expect(maxHeap.remove()).toBe(77);
     expect(maxHeap.remove()).toBe(49);
 
-    expect(JSON.stringify(maxHeap.list)).toBe(
-      JSON.stringify(["none", 33, 24, 10, 4, 1, 6])
-    );
+    expect(maxHeap.list).toStrictEqual(["none", 33, 24, 10, 4, 1, 6]);
   });
 });

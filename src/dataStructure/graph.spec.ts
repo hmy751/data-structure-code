@@ -16,7 +16,7 @@ describe("Test Graph", () => {
     graph.addEdge(3, 5);
     graph.addEdge(4, 5);
 
-    expect(JSON.stringify(graph.dfs(1))).toBe(JSON.stringify([1, 2, 4, 5, 3]));
+    expect(graph.dfs(1)).toStrictEqual([1, 2, 4, 5, 3]);
   });
 
   it("bfs로 조회하면 가장 가까운 노드부터 조회한다.", () => {
@@ -34,6 +34,6 @@ describe("Test Graph", () => {
     graph.addEdge(3, 5);
     graph.addEdge(4, 5);
 
-    expect(JSON.stringify(graph.bfs(1))).toBe(JSON.stringify([1, 2, 3, 4, 5]));
+    expect(graph.bfs(1)).toStrictEqual([1, 2, 3, 4, 5]);
   });
 });
