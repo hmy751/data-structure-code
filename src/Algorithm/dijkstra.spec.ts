@@ -1,9 +1,7 @@
-import { createGraph, dijkstra } from "./dijkstra";
+import { graph, dijkstra } from "./dijkstra";
 
 describe("Test dijkstra algorithm", () => {
   it("다익스트라 알고리즘을 활용하여 시작 노드부터 각 노드까지의 최단거리 및 이전 노드를 출력한다.", () => {
-    const graph = createGraph();
-
     graph.addEdge("A", "B", 4);
     graph.addEdge("A", "C", 2);
     graph.addEdge("B", "E", 3);
