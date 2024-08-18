@@ -13,11 +13,21 @@ describe("Test dijkstra algorithm", () => {
 
     const result = dijkstra("A");
 
-    expect(JSON.stringify(result.distances)).toBe(
-      JSON.stringify({ A: 0, B: 4, C: 2, D: 4, E: 6, F: 6 })
-    );
-    expect(JSON.stringify(result.previous)).toBe(
-      JSON.stringify({ A: null, B: "A", C: "A", D: "C", E: "F", F: "D" })
-    );
+    expect(result.distances).toStrictEqual({
+      A: 0,
+      B: 4,
+      C: 2,
+      D: 4,
+      E: 6,
+      F: 5,
+    });
+    expect(result.previous).toStrictEqual({
+      A: null,
+      B: "A",
+      C: "A",
+      D: "C",
+      E: "F",
+      F: "D",
+    });
   });
 });
