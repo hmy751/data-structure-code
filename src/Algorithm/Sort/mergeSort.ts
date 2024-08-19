@@ -30,9 +30,12 @@ const merge: (left: number[], right: number[]) => number[] = (left, right) => {
 export const mergeSort: (array: number[]) => number[] = (array: number[]) => {
   if (array.length <= 1) return array;
 
+  // 분할, 문제를 작은 하위 문제로 분할한다.
   const mid = Math.floor(array.length / 2);
   const left = array.slice(0, mid);
   const right = array.slice(mid);
 
+  // 정복, 하위 문제를 재귀적으로 해결한다.
+  // 병합, 하위 문제의 해결책을 결합하여 원래 문제를 해결한다.
   return merge(mergeSort(left), mergeSort(right));
 };
